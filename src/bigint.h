@@ -26,4 +26,5 @@ namespace bar {
 		BigInt operator / (BigInt& x);
 	};
 	int comp(BigInt &a, BigInt &b);
+	BigInt absAdd(BigInt &a, BigInt &b);
 }

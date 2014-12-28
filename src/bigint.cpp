@@ -16,7 +16,7 @@ bar::BigInt::BigInt(const char* s) {
 		this -> data.clear();
 		this -> data.resize((len / 3) + 2);
 	}
-	if (s[0] == '-') flag = false, st = 2; else flag = true, st = 1;
+	if (s[0] == '-') flag = 1, st = 2; else flag = 0, st = 1;
 	for (int i = len; i >= st; i -= 3) {
 		//printf("DEBUG: i %d\n", i);
 		temp = 0;
@@ -67,6 +67,7 @@ void bar::BigInt::print() {
 		puts("0");
 		return;
 	}
+	if (flag) putchar('-');
 	std::vector<int>::iterator i = this -> data.end();
 	-- i;
 	printf("%d", *i);
